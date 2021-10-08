@@ -12,6 +12,7 @@ import {
   faTrash,
   faPen,
   faWindowClose,
+  faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
 import ProductDetail from "react-modal";
@@ -153,15 +154,16 @@ const Products = () => {
 
   return (
     <section className="article">
+      <h1 style={{ lineHeight: "0px", marginTop: "80px" }}>List Products</h1>
       {/* MODAL PRODUCT DETAIL BILA LIST PRODUCT DI KLIK AKAN MUNCUL DETAIL PRODUCT */}
       <ProductDetail
         isOpen={descModalIsOpen}
         ariaHideApp={false}
         style={{
           content: {
-            top: "40px",
-            left: "140px",
-            right: "140px",
+            top: "50px",
+            left: "180px",
+            right: "40px",
             bottom: "40px",
           },
         }}
@@ -193,13 +195,6 @@ const Products = () => {
               <h1 style={{ textAlign: "justify" }}>{userEdit.title}</h1>
               <p style={{ textAlign: "justify" }}>{userEdit.description}</p>
             </div>
-
-            <div className="product-price">
-              <span>$ {userEdit.price}</span>
-              <a href="#" className="cart-btn">
-                Add to cart
-              </a>
-            </div>
           </div>
         </section>
       </ProductDetail>
@@ -210,9 +205,9 @@ const Products = () => {
         ariaHideApp={false}
         style={{
           content: {
-            top: "40px",
-            left: "140px",
-            right: "140px",
+            top: "50px",
+            left: "180px",
+            right: "40px",
             bottom: "40px",
           },
         }}
@@ -319,115 +314,115 @@ const Products = () => {
         </div>
       </EditProduct>
 
-      <div className="Header">
-        <div className="Modal">
-          <button onClick={() => setModalIsOpen(true)} className="bn54">
-            Add New Product
-          </button>
-
-          {/* MODAL TAMBAH PRODUCT */}
-          <Modal
-            isOpen={modalIsOpen}
-            ariaHideApp={false}
-            style={{
-              content: {
-                top: "40px",
-                left: "140px",
-                right: "140px",
-                bottom: "40px",
-              },
-            }}
+      <div className="Modal">
+        {/* MODAL TAMBAH PRODUCT */}
+        <Modal
+          isOpen={modalIsOpen}
+          ariaHideApp={false}
+          style={{
+            content: {
+              top: "50px",
+              left: "180px",
+              right: "40px",
+              bottom: "40px",
+            },
+          }}
+        >
+          <button
+            onClick={() => setModalIsOpen(false)}
+            style={{ float: "right" }}
+            className="button-ud"
           >
-            <button
-              onClick={() => setModalIsOpen(false)}
-              style={{ float: "right" }}
-              className="button-ud"
-            >
-              <FontAwesomeIcon
-                icon={faWindowClose}
-                size="2x"
-                style={{ color: "red" }}
-              />
-            </button>
-            <section className="content-product">
-              <section className="add-product">
-                <h1> New Product </h1>
-                <div className="form-container">
-                  <form id="form" className="form">
-                    <div className="page">
-                      <div className="form__group field">
-                        <input
-                          type="input"
-                          className="form__field"
-                          placeholder="Title"
-                          name="title"
-                          onChange={handleChange}
-                          value={userInput.title}
-                        />
-                        <label className="form__label">Title</label>
-                      </div>
-                      <div className="form__group field">
-                        <input
-                          type="input"
-                          className="form__field"
-                          placeholder="Price"
-                          name="price"
-                          onChange={handleChange}
-                          value={userInput.price}
-                        />
-                        <label className="form__label">Price</label>
-                      </div>
-                      <div className="form__group field">
-                        <input
-                          type="input"
-                          className="form__field"
-                          placeholder="Description"
-                          name="description"
-                          onChange={handleChange}
-                          value={userInput.description}
-                        />
-                        <label className="form__label">Description</label>
-                      </div>
-                      <div className="form__group field">
-                        <input
-                          type="input"
-                          className="form__field"
-                          placeholder="Image"
-                          name="image"
-                          onChange={handleChange}
-                          value={userInput.image}
-                        />
-                        <label className="form__label">Image</label>
-                      </div>
-                      <div className="form__group field">
-                        <input
-                          type="input"
-                          className="form__field"
-                          placeholder="Category"
-                          name="category"
-                          onChange={handleChange}
-                          value={userInput.category}
-                        />
-                        <label className="form__label">Category</label>
-                      </div>
+            <FontAwesomeIcon
+              icon={faWindowClose}
+              size="2x"
+              style={{ color: "red" }}
+            />
+          </button>
+          <section className="content-product">
+            <section className="add-product">
+              <h1> New Product </h1>
+              <div className="form-container">
+                <form id="form" className="form">
+                  <div className="page">
+                    <div className="form__group field">
+                      <input
+                        type="input"
+                        className="form__field"
+                        placeholder="Title"
+                        name="title"
+                        onChange={handleChange}
+                        value={userInput.title}
+                      />
+                      <label className="form__label">Title</label>
                     </div>
+                    <div className="form__group field">
+                      <input
+                        type="input"
+                        className="form__field"
+                        placeholder="Price"
+                        name="price"
+                        onChange={handleChange}
+                        value={userInput.price}
+                      />
+                      <label className="form__label">Price</label>
+                    </div>
+                    <div className="form__group field">
+                      <input
+                        type="input"
+                        className="form__field"
+                        placeholder="Description"
+                        name="description"
+                        onChange={handleChange}
+                        value={userInput.description}
+                      />
+                      <label className="form__label">Description</label>
+                    </div>
+                    <div className="form__group field">
+                      <input
+                        type="input"
+                        className="form__field"
+                        placeholder="Image"
+                        name="image"
+                        onChange={handleChange}
+                        value={userInput.image}
+                      />
+                      <label className="form__label">Image</label>
+                    </div>
+                    <div className="form__group field">
+                      <input
+                        type="input"
+                        className="form__field"
+                        placeholder="Category"
+                        name="category"
+                        onChange={handleChange}
+                        value={userInput.category}
+                      />
+                      <label className="form__label">Category</label>
+                    </div>
+                  </div>
 
-                    <div className="button">
-                      <button
-                        className="bn54"
-                        type="button"
-                        onClick={handleSubmit}
-                      >
-                        <span className="bn54span">Submit</span>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </section>
+                  <div className="button">
+                    <button
+                      className="bn54"
+                      type="button"
+                      onClick={handleSubmit}
+                    >
+                      <span className="bn54span">Submit</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
             </section>
-            <br />
-          </Modal>
-        </div>
+          </section>
+          <br />
+        </Modal>
+      </div>
+
+      <div className="Header">
+        <button onClick={() => setModalIsOpen(true)} className="bn54">
+          Add New Product
+        </button>
 
         {/* SEACRH PRODUCT BY TITLE */}
         <div className="search">
@@ -447,7 +442,7 @@ const Products = () => {
 
       <section>
         <section className="product">
-          <title>Products</title>
+          <title>Product List</title>
           {loading
             ? "Loading..."
             : error
@@ -465,66 +460,76 @@ const Products = () => {
                   }
                 })
                 .map((product) => (
-                  <div className="card" key={product.id}>
-                    <div className="card-content">
-                      {/* EDIT PRODUCT */}
-                      <button
-                        onClick={() =>
-                          seteditModalIsOpen(true) & handleEdit(product)
-                        }
-                        className="button-ud"
-                      >
-                        <FontAwesomeIcon
-                          icon={faPen}
-                          size="1x"
-                          style={{ color: "blue" }}
-                        />
-                      </button>
+                  <div>
+                    <div className="product-detail" key={product.id}>
+                      <div className="id">
+                        <span>{product.id}</span>
+                      </div>
 
-                      {/* DELETE PRODUCT */}
-                      <button
-                        onClick={() =>
-                          dispatch(
-                            deleteProduct(product.id),
-                            Swal.fire(
-                              "Berhasil Menghapus!",
-                              "Product " +
-                                product.title +
-                                " Berhasil di Hapus!",
-                              "success"
-                            )
-                          )
-                        }
-                        className="button-ud"
-                      >
-                        <FontAwesomeIcon
-                          icon={faTrash}
-                          size="1x"
-                          style={{ color: "red" }}
-                        />
-                      </button>
+                      <div className="left-column">
+                        <span>{product.title}</span>
+                      </div>
 
-                      {/* LIST PRODUCT */}
-                      <a
-                        onClick={() =>
-                          setdescModalIsOpen(true) & handleEdit(product)
-                        }
-                      >
-                        <h3>{product.title}</h3>
-                        <div className="card-image">
-                          <Image
-                            src={product.image}
-                            alt="A image of product"
-                            width={200}
-                            height={250}
+                      <div className="right-column">
+                        <div className="product-description">
+                          <span>{product.category}</span>
+                        </div>
+                      </div>
+
+                      <div className="action-column">
+                        {/* DETAIL PRODUCT */}
+                        <button
+                          onClick={() =>
+                            setdescModalIsOpen(true) & handleEdit(product)
+                          }
+                          className="button-ud"
+                        >
+                          <FontAwesomeIcon
+                            icon={faInfoCircle}
+                            size="1x"
+                            style={{ color: "green" }}
                           />
-                        </div>
-                        <div className="text">
-                          <h4>$ {product.price}</h4>
-                          <h4>{product.category}</h4>
-                        </div>
-                      </a>
+                        </button>
+
+                        {/* EDIT PRODUCT */}
+                        <button
+                          onClick={() =>
+                            seteditModalIsOpen(true) & handleEdit(product)
+                          }
+                          className="button-ud"
+                        >
+                          <FontAwesomeIcon
+                            icon={faPen}
+                            size="1x"
+                            style={{ color: "blue" }}
+                          />
+                        </button>
+
+                        {/* DELETE PRODUCT */}
+                        <button
+                          onClick={() =>
+                            dispatch(
+                              deleteProduct(product.id),
+                              Swal.fire(
+                                "Berhasil Menghapus!",
+                                "Product " +
+                                  product.title +
+                                  " Berhasil di Hapus!",
+                                "success"
+                              )
+                            )
+                          }
+                          className="button-ud"
+                        >
+                          <FontAwesomeIcon
+                            icon={faTrash}
+                            size="1x"
+                            style={{ color: "red" }}
+                          />
+                        </button>
+                      </div>
                     </div>
+                    <hr />
                   </div>
                 ))}
         </section>

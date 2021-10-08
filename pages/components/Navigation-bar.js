@@ -8,9 +8,9 @@ const Navbar = () => {
       </div>
 
       <div className={styles.sidenav}>
-        <a href="../Products">List Products</a>
-        <a href="#">User</a>
-        <a href="#">Cart User</a>
+        <a href="../Products">Products</a>
+        <a href="../Users">User</a>
+        <a href="../Carts">Cart User</a>
         <br />
         <a href="#contact" style={{ color: "red" }}>
           Log Out
