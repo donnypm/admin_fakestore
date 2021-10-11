@@ -1,3 +1,4 @@
+import Layout from "./components/Layout";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCarts } from "../redux/actions/cartActions";
@@ -9,6 +10,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Users.module.scss";
+import Head from "next/head";
 
 const Carts = () => {
   const dispatch = useDispatch();
@@ -22,6 +24,7 @@ const Carts = () => {
 
   return (
     <div>
+      <Layout />
       <section className="article">
         <title>Carts</title>
         <h1 style={{ lineHeight: "0px", marginTop: "80px" }}>List Cart</h1>

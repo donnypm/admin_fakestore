@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="Navigation-bar">
       <div className={styles.navbar}>
-        <a href="/">Home</a>
+        <a href="../LandingPage">Home</a>
       </div>
 
       <div className={styles.sidenav}>
@@ -12,7 +12,7 @@ const Navbar = () => {
         <a href="../Users">User</a>
         <a href="../Carts">Cart User</a>
         <br />
-        <a href="#contact" style={{ color: "red" }}>
+        <a href="/" style={{ color: "red" }}>
           Log Out
         </a>
       </div>

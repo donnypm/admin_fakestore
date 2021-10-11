@@ -1,3 +1,4 @@
+import Layout from "./components/Layout";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUsers, getUsers } from "../redux/actions/userActions";
@@ -11,6 +12,7 @@ import {
 import styles from "../styles/Users.module.scss";
 import DetailUser from "react-modal";
 import Swal from "sweetalert2";
+import Head from "next/head";
 
 DetailUser.setAppElement();
 
@@ -66,6 +68,10 @@ const Users = () => {
     //MODAL
 
     <div>
+      <title>List User</title>
+
+      <Layout />
+
       <DetailUser
         isOpen={detailUser}
         ariaHideApp={false}
@@ -124,7 +130,6 @@ const Users = () => {
           </table>
         </section>
       </DetailUser>
-
       <section className="article">
         <title>Users</title>
         <h1 style={{ lineHeight: "0px", marginTop: "80px" }}>List User</h1>

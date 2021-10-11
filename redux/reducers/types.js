@@ -10,3 +10,6 @@ export const USERS_ERROR = "USERS_ERROR";
 
 export const GET_CARTS = "GET_CARTS";
 export const CARTS_ERROR = "CARTS_ERROR";
+
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
